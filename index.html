@@ -693,22 +693,17 @@
             }
         }
 
-        /* SERVICES CAROUSEL */
+        /* SERVICES — STICKY SCROLL STACK */
         #services {
             background: #f8faff;
-            padding: 100px 0 40px;
+            padding: 100px 0 0;
         }
 
-        .services-carousel-wrap {
+        .services-stack-wrap {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .service-cards-container {
+            padding: 0 24px 50vh;
             position: relative;
-            height: 500px;
-            min-height: 500px;
         }
 
         .service-card {
@@ -717,23 +712,21 @@
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
             padding: 48px 56px;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            position: absolute;
-            inset: 0;
+            position: sticky;
+            top: calc(120px + var(--i) * 30px);
             display: flex;
             flex-direction: column;
             justify-content: center;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            pointer-events: none;
-            z-index: 1;
+            margin-bottom: 60px;
+            transform-origin: top center;
+            will-change: transform, filter;
+            backface-visibility: hidden;
+            z-index: calc(var(--i) + 1);
+            transition: box-shadow 0.3s ease;
         }
 
-        .service-card.active {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-            z-index: 10;
+        .service-card:last-child {
+            margin-bottom: 0;
         }
 
         .service-icon {
@@ -763,40 +756,23 @@
             line-height: 1.8;
         }
 
-        .services-nav {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .service-nav-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--blue);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-
-        .service-nav-btn:hover {
-            background: var(--blue-light);
-            transform: scale(1.1);
-        }
-
         @media(max-width: 767px) {
-            .service-cards-container {
-                height: 400px;
-            }
-
             .service-card {
                 padding: 32px 24px;
+                top: calc(80px + var(--i) * 24px);
+                margin-bottom: 40px;
+            }
+
+            .service-card h3 {
+                font-size: 22px;
+            }
+
+            .service-card p {
+                font-size: 14px;
+            }
+
+            .services-stack-wrap {
+                padding-bottom: 30vh;
             }
         }
 
@@ -1691,9 +1667,9 @@
                     Complete solar solutions for homes, farms, shops, and industries — sales, installation & service all
                     under one roof.</p>
             </div>
-            <div class="services-carousel-wrap">
-                <div class="service-cards-container" id="service-cards-container">
-                    <div class="service-card active">
+            <div class="services-stack-wrap" id="services-stack">
+                
+                    <div class="service-card" style="--i: 0;">
                         <div class="service-icon"><i class="fas fa-water"></i></div>
                         <h3 data-en="Solar Water Pump" data-ta="சோலார் நீர் பம்ப்">Solar Water Pump</h3>
                         <p data-en="Professional 1.5HP to 20HP solar water pumps for borewell, farm, and irrigation. Completely energy-free pumping solutions with zero electricity costs. Reliable, efficient, and built to last for 25+ years with minimal maintenance."
@@ -1701,7 +1677,7 @@
                             Professional 1.5HP to 20HP solar water pumps for borewell, farm, and irrigation. Completely
                             energy-free pumping solutions with zero electricity costs.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 1;">
                         <div class="service-icon"><i class="fas fa-home"></i></div>
                         <h3 data-en="Rooftop Solar System" data-ta="கூரை சோலார் அமைப்பு">Rooftop Solar System</h3>
                         <p data-en="Residential and commercial rooftop solar panels with professional installation. We assist with government subsidies, net metering setup, and warranty documentation. Transform your roof into a power plant!"
@@ -1709,7 +1685,7 @@
                             Residential and commercial rooftop solar panels with professional installation. Transform
                             your roof into a power plant!</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 2;">
                         <div class="service-icon"><i class="fas fa-network-wired"></i></div>
                         <h3 data-en="On-Grid / Off-Grid / Hybrid" data-ta="ஆன்-கிரிட் / ஆஃப்-கிரிட் / கலப்பு">On-Grid /
                             Off-Grid / Hybrid</h3>
@@ -1718,7 +1694,7 @@
                             Customized solar solutions tailored to your needs — grid-connected for savings, standalone
                             battery systems.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 3;">
                         <div class="service-icon"><i class="fas fa-battery-full"></i></div>
                         <h3 data-en="Battery, Inverter & Panel Sales"
                             data-ta="பேட்டரி, இன்வர்ட்டர் மற்றும் பேனல் விற்பனை">Battery, Inverter & Panel Sales</h3>
@@ -1727,14 +1703,14 @@
                             Premium branded solar panels, inverters, and batteries available for direct purchase with
                             full manufacturer warranty.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 4;">
                         <div class="service-icon"><i class="fas fa-video"></i></div>
                         <h3 data-en="CCTV & Solar Camera" data-ta="CCTV மற்றும் சோலார் கேமரா">CCTV & Solar Camera</h3>
                         <p data-en="Solar-powered CCTV camera systems for 24/7 monitoring without electricity bills. Perfect for homes, farms, and shops. Remote viewing via 4G/WiFi with cloud storage backup included."
                             data-ta="சோலார் சக்தியுடன் கூடிய CCTV கேமரா அமைப்பு 24/7 கண்காணிப்பு மின்சாரக் கட்டணம் இல்லாமல்.">
                             Solar-powered CCTV camera systems for 24/7 monitoring without electricity bills.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 5;">
                         <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
                         <h3 data-en="Solar Street Light Setup" data-ta="சோலார் தெருவொளி நிறுவல்">Solar Street Light
                             Setup</h3>
@@ -1742,7 +1718,7 @@
                             data-ta="சாலைகள், வசதிகள் மற்றும் விவசாய நிலங்களுக்கு முழுமையான சோலார் தெருவொளி அமைப்புகள்.">
                             Complete solar street lighting systems for roads, colonies, and agricultural lands.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 6;">
                         <div class="service-icon"><i class="fas fa-industry"></i></div>
                         <h3 data-en="Industrial Solar Solutions" data-ta="தொழிற்சாலை சோலார் தீர்வுகள்">Industrial Solar
                             Solutions</h3>
@@ -1750,7 +1726,7 @@
                             data-ta="தொழிற்சாலைகள், கதவுக்குள் மற்றும் தொழிற்சாலைகளுக்கான பெரிய அளவிலான சோலார் அமைப்புகள்.">
                             Large-scale solar systems for factories, warehouses, and industries.</p>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" style="--i: 7;">
                         <div class="service-icon"><i class="fas fa-tools"></i></div>
                         <h3 data-en="Home / Shop Electrification" data-ta="வீடு / கடை மின்மயமாக்கல்">Home / Shop
                             Electrification</h3>
@@ -1759,14 +1735,6 @@
                             Complete solar electrification packages for homes and shops.</p>
                     </div>
                 </div>
-                <div class="services-nav">
-                    <button class="service-nav-btn" id="service-prev"><i class="fas fa-chevron-left"></i></button>
-                    <span id="service-counter"
-                        style="color: var(--text-muted); padding: 0 16px; display: flex; align-items: center;">1 /
-                        8</span>
-                    <button class="service-nav-btn" id="service-next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -2329,31 +2297,51 @@
         startTimer();
 
         // ========================= SERVICE CAROUSEL =========================
-        let serviceIdx = 0;
+        // ========================= SCROLL STACK SCALE =========================
         const serviceCards = document.querySelectorAll('.service-card');
-        const totalServices = serviceCards.length;
+        const container = document.getElementById('services');
 
-        function updateServiceDisplay() {
+        function updateScrollStack() {
+            const containerRect = container.getBoundingClientRect();
+            const containerTop = containerRect.top;
+            const containerHeight = containerRect.height;
+            const windowHeight = window.innerHeight;
+
+            // Start scaling when container enters viewport, end when it leaves
+            // But specifically we want cards to scale as they're active
             serviceCards.forEach((card, i) => {
-                card.classList.remove('active', 'prev', 'next');
-                if (i === serviceIdx) card.classList.add('active');
-                else if (i < serviceIdx) card.classList.add('prev');
-                else card.classList.add('next');
+                const rect = card.getBoundingClientRect();
+                const cardTop = rect.top;
+                const targetScale = Math.max(0.6, 1 - (serviceCards.length - i - 1) * 0.05);
+                
+                // If a card is near the top (sticky position), start scaling it down
+                // as the NEXT card approaches or overlaps it.
+                // Simplified logic: calculate progress based on scroll position
+                // For each card, progress starts when its top hits ~120px
+                const stickyTop = 120 + i * 30;
+                const progressStart = stickyTop;
+                const progressEnd = windowHeight; // Arbitrary but effective for smooth scaling
+
+                let scrollProgress = 0;
+                if (cardTop <= stickyTop) {
+                    // How much have we scrolled PAST the sticky point relative to container height?
+                    // We want it to be fully scaled down by the time we reach the end of the section.
+                    const distMoved = stickyTop - cardTop;
+                    scrollProgress = Math.min(1, Math.max(0, distMoved / 500));
+                }
+
+                // Apply scale based on progress
+                const currentScale = 1 - (scrollProgress * (1 - targetScale));
+                card.style.transform = `scale(${currentScale})`;
+                
+                // Add a slight blur to cards underneath
+                const blurValue = scrollProgress * 2;
+                card.style.filter = blurValue > 0.1 ? `blur(${blurValue}px)` : 'none';
             });
-            document.getElementById('service-counter').textContent = `${serviceIdx + 1} / ${totalServices}`;
         }
 
-        document.getElementById('service-prev').addEventListener('click', () => {
-            serviceIdx = (serviceIdx - 1 + totalServices) % totalServices;
-            updateServiceDisplay();
-        });
-
-        document.getElementById('service-next').addEventListener('click', () => {
-            serviceIdx = (serviceIdx + 1) % totalServices;
-            updateServiceDisplay();
-        });
-
-        updateServiceDisplay();
+        window.addEventListener('scroll', updateScrollStack, { passive: true });
+        updateScrollStack(); // Initial call
 
         // ========================= FADE UP =========================
         const fadeObserver = new IntersectionObserver(entries => {
@@ -2374,3 +2362,5 @@
 </body>
 
 </html>
+
+
