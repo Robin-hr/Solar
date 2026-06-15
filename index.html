@@ -246,12 +246,15 @@
 
         .slide {
             min-width: 100%;
+            width: 100%;
+            max-width: 100vw;
             height: 100%;
             position: relative;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .slide-bg {
@@ -280,6 +283,7 @@
             text-align: center;
             padding: 2rem;
             max-width: 860px;
+            width: 100%;
         }
 
         .slide-eyebrow {
@@ -413,6 +417,47 @@
 
         .carousel-arrow.next {
             right: 24px;
+        }
+
+        @media(max-width: 768px) {
+            .slide-content {
+                padding: 1rem 30px;
+            }
+
+            .slide-eyebrow {
+                letter-spacing: 2px;
+                font-size: 11px;
+            }
+
+            .slide-title {
+                font-size: clamp(24px, 7vw, 36px);
+            }
+
+            .carousel-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            .carousel-arrow.prev {
+                left: 6px;
+            }
+
+            .carousel-arrow.next {
+                right: 6px;
+            }
+
+            .btn-primary,
+            .btn-outline {
+                display: block;
+                width: 100%;
+                margin: 0 0 12px 0 !important;
+                padding: 14px 20px;
+            }
+
+            .btn-outline {
+                border-width: 1.5px;
+            }
         }
 
         /* Canvas for click sparks */
@@ -589,7 +634,8 @@
             transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .expand-img-card.active, .expand-img-card:hover {
+        .expand-img-card.active,
+        .expand-img-card:hover {
             flex: 1 1 0;
         }
 
@@ -1882,7 +1928,7 @@
                 </div>
                 <div class="product-card fade-up">
                     <div class="product-img" style="background: linear-gradient(135deg, #1565c0, #1976d2);"><i
-                            class="fas fa-cable" style="font-size: 52px; color: #ffc107;"></i></div>
+                            class="fas fa-wrench" style="font-size: 52px; color: #ffc107;"></i></div>
                     <div class="product-info">
                         <h4 data-en="Mounting & Wiring" data-ta="ஏற்றம் மற்றும் மின் வடிவம்">Mounting & Wiring</h4>
                         <p data-en="Complete mounting systems, cables, and accessories for installations."
@@ -2201,7 +2247,7 @@
                 card.classList.add('active');
             });
         });
-        
+
         if (expandCards.length > 0) {
             expandCards[0].classList.add('active');
         }
