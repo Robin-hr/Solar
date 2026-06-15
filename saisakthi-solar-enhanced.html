@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saisakthi Solar Solution – Karur, Tamil Nadu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --blue: #0d47a1;
+            --blue-mid: #1565c0;
+            --blue-light: #1976d2;
+            --blue-pale: #e3f0ff;
+            --yellow: #ffc107;
+            --yellow-dark: #f9a825;
+            --dark: #0a1f44;
+            --text: #2c3e50;
+            --text-muted: #607d8b;
+            --bg-light: #f5f8ff;
+            --border: #dce8f7;
+            --shadow: 0 4px 24px rgba(13, 71, 161, 0.10);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans Tamil', sans-serif;
+            color: var(--text);
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--dark);
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+            transition: background 0.3s;
+        }
+
+        nav.scrolled {
+            background: var(--blue);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-brand .logo-sun {
+            width: 44px;
+            height: 44px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--dark);
+            flex-shrink: 0;
+            box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.25);
+        }
+
+        .nav-brand .brand-text {
+            line-height: 1.1;
+        }
+
+        .nav-brand .brand-text span:first-child {
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--yellow);
+            letter-spacing: 1px;
+        }
+
+        .nav-brand .brand-text span:last-child {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--yellow);
+            background: rgba(255, 193, 7, 0.08);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            padding: 4px;
+            gap: 4px;
+            margin: 0 8px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            border: none;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--yellow);
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+        }
+
+        .nav-cta {
+            background: var(--yellow);
+            color: var(--dark) !important;
+            font-weight: 700 !important;
+            border-radius: 6px !important;
+            padding: 8px 20px !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--yellow-dark) !important;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        @media(max-width:900px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                padding: 1rem 0;
+                gap: 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 2rem;
+                border-radius: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .lang-toggle {
+                margin: 8px 2rem;
+            }
+        }
+
+        /* HERO */
+        #home {
+            position: relative;
+            height: 100vh;
+            min-height: 520px;
+            overflow: hidden;
+            margin-top: 0;
+        }
+
+        .carousel {
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slide-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10, 31, 68, 0.82) 0%, rgba(13, 71, 161, 0.65) 100%);
+        }
+
+        .bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 860px;
+        }
+
+        .slide-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 18px;
+        }
+
+        .slide-title {
+            font-size: clamp(28px, 5vw, 56px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .slide-sub {
+            font-size: clamp(14px, 2vw, 18px);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 36px;
+            line-height: 1.7;
+        }
+
+        .btn-primary,
+        .btn-outline {
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 14px 36px;
+        }
+
+        .btn-primary:hover {
+            background: var(--yellow-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            padding: 12px 32px;
+            margin-left: 12px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #fff;
+        }
+
+        /* Carousel Nav */
+        .carousel-nav-wrapper {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .carousel-line {
+            width: 120px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            border-radius: 1px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .carousel-dot.active {
+            background: var(--yellow);
+            width: 28px;
+            border-radius: 5px;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.2s;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--yellow);
+            border-color: var(--yellow);
+            color: var(--dark);
+        }
+
+        .carousel-arrow.prev {
+            left: 24px;
+        }
+
+        .carousel-arrow.next {
+            right: 24px;
+        }
+
+        /* Canvas for click sparks */
+        #spark-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        /* SECTION */
+        section {
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--blue-light);
+            background: var(--blue-pale);
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: clamp(24px, 3.5vw, 38px);
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.25;
+            margin-bottom: 14px;
+        }
+
+        .section-title span {
+            color: var(--blue-light);
+        }
+
+        .section-divider {
+            width: 54px;
+            height: 4px;
+            background: var(--yellow);
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .section-lead {
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 640px;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ABOUT */
+        #about {
+            background: #fff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 16px 48px rgba(13, 71, 161, 0.2);
+        }
+
+        .about-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 20px 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(255, 193, 7, 0.35);
+        }
+
+        .about-badge strong {
+            display: block;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .about-badge span {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .about-features {
+            margin-top: 28px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .about-feat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .about-feat i {
+            color: var(--yellow-dark);
+            font-size: 16px;
+        }
+
+        @media(max-width:768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* EXPAND ON HOVER GALLERY */
+        .hover-expand-gallery {
+            display: flex;
+            gap: 0.25rem;
+            justify-content: center;
+            align-items: center;
+            height: 384px;
+            width: 100%;
+            perspective: 1000px;
+        }
+
+        .expand-img-card {
+            position: relative;
+            width: 40px;
+            height: 384px;
+            overflow: hidden;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+
+        .expand-img-card:hover {
+            width: 384px;
+        }
+
+        .expand-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .expand-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .expand-img-card:hover .expand-overlay {
+            opacity: 1;
+        }
+
+        .expand-text {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 12px;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        .expand-img-card:hover .expand-text {
+            opacity: 1;
+        }
+
+        @media(max-width:768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hover-expand-gallery {
+                height: 300px;
+            }
+
+            .expand-img-card {
+                height: 300px;
+            }
+
+            .expand-img-card:hover {
+                width: 300px;
+            }
+        }
+
+        /* SERVICES CAROUSEL */
+        #services {
+            background: #f8faff;
+            padding: 100px 0 40px;
+        }
+
+        .services-carousel-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .service-cards-container {
+            position: relative;
+            height: 500px;
+            min-height: 500px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+            padding: 48px 56px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .service-card.active {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+            z-index: 10;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--blue) 0%, #1a5276 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 32px;
+            box-shadow: 0 8px 24px rgba(26, 82, 118, 0.25);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .services-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .service-nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .service-nav-btn:hover {
+            background: var(--blue-light);
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 767px) {
+            .service-cards-container {
+                height: 400px;
+            }
+
+            .service-card {
+                padding: 32px 24px;
+            }
+        }
+
+        /* WHY */
+        #why {
+            background: var(--dark);
+        }
+
+        #why .section-tag {
+            color: var(--yellow);
+            background: rgba(255, 193, 7, 0.12);
+        }
+
+        #why .section-title {
+            color: #fff;
+        }
+
+        #why .section-divider {
+            background: var(--yellow);
+        }
+
+        #why .section-lead {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-top: 48px;
+        }
+
+        .why-features {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .why-feat {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 193, 7, 0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--yellow);
+            flex-shrink: 0;
+        }
+
+        .why-feat h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .why-feat p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        @media(max-width:768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PRODUCTS */
+        #products {
+            background: #fff;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .product-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            background: #fff;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow);
+            transform: translateY(-4px);
+            border-color: var(--blue-light);
+        }
+
+        .product-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 52px;
+            color: var(--blue-light);
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 18px 16px;
+        }
+
+        .product-info h4 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .product-info p {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .product-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            background: #fff8e1;
+            color: var(--yellow-dark);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        @media(max-width:768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PROCESS */
+        #process {
+            background: var(--bg-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            margin-top: 56px;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--yellow) 0%, var(--yellow) 50%, var(--border) 50%);
+            z-index: 0;
+            animation: fillProcess 1.5s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fillProcess {
+            from {
+                background-position: 0% center;
+            }
+
+            to {
+                background-position: 100% center;
+            }
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-num {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 16px rgba(13, 71, 161, 0.2);
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+
+        .step-num:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .step-num:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .step-num:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .step-num:nth-child(4) {
+            animation-delay: 0.45s;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .process-step h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media(max-width:700px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        /* TESTIMONIALS */
+        #testimonials {
+            background: var(--blue);
+        }
+
+        #testimonials .section-tag {
+            color: var(--yellow);
+            background: rgba(255, 193, 7, 0.12);
+        }
+
+        #testimonials .section-title {
+            color: #fff;
+        }
+
+        #testimonials .section-divider {
+            background: var(--yellow);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .stars {
+            color: var(--yellow);
+            font-size: 14px;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--yellow);
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .author-info span:first-child {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .author-info span:last-child {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* CONTACT */
+        #contact {
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 64px;
+            margin-top: 48px;
+        }
+
+        .contact-info h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-item-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--blue-pale);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-light);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h5 {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            border-radius: 14px;
+            padding: 36px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-form h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text);
+            background: #fff;
+            transition: border 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--blue-light);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--blue);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: var(--blue-mid);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(13, 71, 161, 0.25);
+        }
+
+        .alert-success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 14px;
+            margin-top: 12px;
+            display: none;
+        }
+
+        @media(max-width:768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 48px;
+        }
+
+        .footer-brand .logo-sun {
+            width: 48px;
+            height: 48px;
+            background: var(--yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+
+        .footer-brand p {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-social a:hover {
+            background: var(--yellow);
+            color: var(--dark);
+        }
+
+        .footer-col h5 {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--yellow);
+            padding-left: 4px;
+        }
+
+        .footer-col p {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .footer-bottom span {
+            color: var(--yellow);
+        }
+
+        @media(max-width:900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:520px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FLOATS */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            background: #25d366;
+            color: #fff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+            text-decoration: none;
+            animation: pulse-green 2.5s infinite;
+        }
+
+        @keyframes pulse-green {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+            }
+
+            50% {
+                box-shadow: 0 4px 32px rgba(37, 211, 102, 0.7), 0 0 0 8px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 96px;
+            right: 28px;
+            z-index: 999;
+            background: var(--blue);
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+        }
+
+        .back-top.show {
+            opacity: 1;
+        }
+
+        .back-top:hover {
+            background: var(--blue-mid);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <a href="#home" class="nav-brand">
+            <div class="logo-sun">☀️</div>
+            <div class="brand-text">
+                <span>Saisakthi Solar Solution</span>
+                <span>Karur · Tamil Nadu</span>
+            </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="#home" class="active" data-en="Home" data-ta="முகப்பு">Home</a>
+            <a href="#about" data-en="About" data-ta="பற்றி">About</a>
+            <a href="#services" data-en="Services" data-ta="சேவைகள்">Services</a>
+            <a href="#products" data-en="Products" data-ta="பொருட்கள்">Products</a>
+            <a href="#process" data-en="Process" data-ta="செயல்முறை">Process</a>
+            <a href="#testimonials" data-en="Testimonials" data-ta="கருத்துக்கள்">Testimonials</a>
+            <div class="lang-toggle" id="lang-toggle">
+                <button class="lang-btn active" id="btn-en" onclick="switchLanguage('en')">EN</button>
+                <button class="lang-btn" id="btn-ta" onclick="switchLanguage('ta')">தமிழ்</button>
+            </div>
+            <a href="#contact" class="nav-cta" data-en="Get Quote" data-ta="மேலோ பெறவும்">Get Quote</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <canvas id="spark-canvas"></canvas>
+        <div class="carousel">
+            <div class="carousel-track" id="carousel-track">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="slide-bg">
+                        <img src="images/hero1.png" alt="Residential Solar" class="bg-img">
+                    </div>
+                    <div class="slide-content">
+                        <p class="slide-eyebrow" data-en="Tamil Nadu's Trusted Solar Partner"
+                            data-ta="தமிழ்நாட்டின் நம்பகமான சோலார் பணி">Tamil Nadu's Trusted Solar Partner</p>
+                        <h1 class="slide-title" data-en="Your Solar Future Starts Here"
+                            data-ta="உங்கள் சூரிய சக்தி எதிர்காலம் இங்கே தொடங்குகிறது">Your Solar Future Starts Here
+                        </h1>
+                        <p class="slide-sub" data-en="Your Future Powered by Solar Energy Home • Shop • Farm • Factory"
+                            data-ta="சூரியச் சக்தியால் உங்கள் எதிர்காலம் வீடு • கடை • பண்ணை • தொழிற்சாலை">Your Future
+                            Powered by Solar Energy<br>Home • Shop • Farm • Factory</p>
+                        <a href="#contact" class="btn-primary" data-en="Free Consultation" data-ta="இலவச ஆலோசனை">Free
+                            Consultation</a>
+                        <a href="#services" class="btn-outline" data-en="Our Services" data-ta="எங்கள் சேவைகள்">Our
+                            Services</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-bg">
+                        <img src="images/hero2.png" alt="Farm Solar" class="bg-img">
+                    </div>
+                    <div class="slide-content">
+                        <p class="slide-eyebrow" data-en="Solar Water Pump Specialists"
+                            data-ta="சோலார் நீர் பம்ப் நிபுணர்">Solar Water Pump Specialists</p>
+                        <h1 class="slide-title" data-en="Borewell & Farm Solar Pump Solutions"
+                            data-ta="குழாய்க் கிணறு மற்றும் பண்ணை சோலார் பம்ப் தீர்வுகள்">Borewell & Farm Solar Pump
+                            Solutions</h1>
+                        <p class="slide-sub" data-en="1.5HP – 20HP Solar Water Pumps Borewell • Farm • Irrigation"
+                            data-ta="1.5HP – 20HP சோலார் நீர் பம்ப் குழாய்க் கிணறு • பண்ணை • நீர்ப்பாசனம்">1.5HP – 20HP
+                            Solar Water Pumps<br>Borewell • Farm • Irrigation</p>
+                        <a href="#contact" class="btn-primary" data-en="Get a Quote" data-ta="மேலோ பெறவும்">Get a
+                            Quote</a>
+                        <a href="#services" class="btn-outline" data-en="View Services" data-ta="சேவைகளைக் காண">View
+                            Services</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-bg">
+                        <img src="images/hero3.png" alt="Industrial Solar" class="bg-img">
+                    </div>
+                    <div class="slide-content">
+                        <p class="slide-eyebrow" data-en="Rooftop Solar Installations" data-ta="கூரை சோலார் நிறுவல்">
+                            Rooftop Solar Installations</p>
+                        <h1 class="slide-title" data-en="On-Grid · Off-Grid Hybrid Systems"
+                            data-ta="ஆன்-கிரிட் · ஆஃப்-கிரிட் கலப்பு அமைப்புகள்">On-Grid · Off-Grid Hybrid Systems</h1>
+                        <p class="slide-sub"
+                            data-en="Cut Your Electricity Bills by 90% Best Price Guarantee • Premium Brands"
+                            data-ta="உங்கள் மின்சாரக் கட்டணம் 90% குறையுங்கள் சிறந்த விலை உத்தரவாதம் • பிரிமியம் பிராண்டுகள்">
+                            Cut Your Electricity Bills by 90%<br>Best Price Guarantee • Premium Brands</p>
+                        <a href="#contact" class="btn-primary" data-en="Start Saving Today"
+                            data-ta="இன்றே சேமிக்க தொடங்குங்கள்">Start Saving Today</a>
+                        <a href="#about" class="btn-outline" data-en="Know More" data-ta="மேலும் அறியுங்கள்">Know
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow prev" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-arrow next" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-nav-wrapper">
+                <div class="carousel-line"></div>
+                <div class="carousel-nav">
+                    <button class="carousel-dot active" data-idx="0"></button>
+                    <button class="carousel-dot" data-idx="1"></button>
+                    <button class="carousel-dot" data-idx="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-img-wrap fade-up"
+                    style="display: flex; justify-content: center; align-items: center;">
+                    <div style="width: 100%; position: relative;">
+                        <div class="hover-expand-gallery">
+                            <div class="expand-img-card" data-index="0">
+                                <img src="images/gallery1.png" alt="Solar Installation 1" class="expand-img">
+                                <div class="expand-overlay"></div>
+                                <div class="expand-text">Solar Farms</div>
+                            </div>
+                            <div class="expand-img-card" data-index="1">
+                                <img src="images/gallery2.png" alt="Solar Installation 2" class="expand-img">
+                                <div class="expand-overlay"></div>
+                                <div class="expand-text">Solar Panels</div>
+                            </div>
+                            <div class="expand-img-card" data-index="2">
+                                <img src="images/gallery3.png" alt="Solar Installation 3" class="expand-img">
+                                <div class="expand-overlay"></div>
+                                <div class="expand-text">Solar for Industries</div>
+                            </div>
+                            <div class="expand-img-card" data-index="3">
+                                <img src="images/gallery4.png" alt="Solar Installation 4" class="expand-img">
+                                <div class="expand-overlay"></div>
+                                <div class="expand-text">Solar Panel Installation goals</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-badge">
+                        <strong>8+</strong>
+                        <span data-en="Years Trusted" data-ta="ஆண்டுகள் நம்பகமாய்">Years Trusted</span>
+                    </div>
+                </div>
+                <div class="fade-up">
+                    <span class="section-tag" data-en="About Us" data-ta="பற்றி">About Us</span>
+                    <h2 class="section-title"><span data-en="Tamil Nadu's Most " data-ta="தமிழ்நாட்டின் ">Tamil Nadu's
+                            Most </span><span class="lang-toggle-text" data-en="Trusted Solar Partner"
+                            data-ta="நம்பகமான சோலார் பணி">Trusted Solar Partner</span></h2>
+                    <div class="section-divider"></div>
+                    <p class="section-lead"
+                        data-en="Saisakthi Solar Solution — Solar solutions for homes, shops, farms, and factories. We are specialists in sales, installation, and after-sales service."
+                        data-ta="Saisakthi Solar Solution — வீடு, கடை, பண்ணை மற்றும் தொழிற்சாலைகளுக்கான சோலார் தீர்வுகள். விற்பனை, நிறுவல் மற்றும் விற்பனைக்குப் பிந்தைய சேவையில் நாங்கள் நிபுணர்கள்.">
+                        Saisakthi Solar Solution — Solar solutions for homes, shops, farms, and factories. We are
+                        specialists in sales, installation, and after-sales service.</p>
+                    <div class="about-features">
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="On-time Service"
+                                data-ta="நேரம் தவறாத சேவை">On-time Service</span></div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="Perfect Installation"
+                                data-ta="சரியான நிறுவல்">Perfect Installation</span></div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="Premium Products"
+                                data-ta="பிரிமியம் பொருட்கள்">Premium Products</span></div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="Best Price"
+                                data-ta="சிறந்த விலை">Best Price</span></div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="24/7 Support"
+                                data-ta="24/7 ஆதரவு">24/7 Support</span></div>
+                        <div class="about-feat"><i class="fas fa-check-circle"></i> <span data-en="AMC Service"
+                                data-ta="AMC சேவை">AMC Service</span></div>
+                    </div>
+                    <div style="margin-top:28px;">
+                        <a href="#contact" class="btn-primary" data-en="Contact Us Today"
+                            data-ta="இன்று தொடர்புபடுக">Contact Us Today</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+                <span class="section-tag fade-up" data-en="Our Services" data-ta="எங்களின் சேவைகள்">Our Services</span>
+                <h2 class="section-title fade-up" data-en="Complete Solar " data-ta="முழுமையான சோலார் "><span
+                        data-en="Solutions" data-ta="தீர்வுகள்">Solutions</span></h2>
+                <div class="section-divider fade-up"></div>
+                <p class="section-lead fade-up"
+                    data-en="Complete solar solutions for homes, farms, shops, and industries — sales, installation & service all under one roof."
+                    data-ta="வீடு, பண்ணை, கடை மற்றும் தொழிற்சாலைகளுக்கான முழுமையான சோலார் தீர்வுகள் — விற்பனை, நிறுவல் மற்றும் சேவை அனைத்தும் ஒரே இடத்தில்.">
+                    Complete solar solutions for homes, farms, shops, and industries — sales, installation & service all
+                    under one roof.</p>
+            </div>
+            <div class="services-carousel-wrap">
+                <div class="service-cards-container" id="service-cards-container">
+                    <div class="service-card active">
+                        <div class="service-icon"><i class="fas fa-water"></i></div>
+                        <h3 data-en="Solar Water Pump" data-ta="சோலார் நீர் பம்ப்">Solar Water Pump</h3>
+                        <p data-en="Professional 1.5HP to 20HP solar water pumps for borewell, farm, and irrigation. Completely energy-free pumping solutions with zero electricity costs. Reliable, efficient, and built to last for 25+ years with minimal maintenance."
+                            data-ta="பேசாதார 1.5HP முதல் 20HP வரை சோலார் நீர் பம்ப் குழாய்க் கிணறு, பண்ணை மற்றும் நீர்ப்பாசனத்திற்கு. முற்றிலும் ஆற்றல் இல்லாத பம்பிங் தீர்வுகள் பூஜ்ய மின்சாரக் கட்டணத்துடன்.">
+                            Professional 1.5HP to 20HP solar water pumps for borewell, farm, and irrigation. Completely
+                            energy-free pumping solutions with zero electricity costs.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-home"></i></div>
+                        <h3 data-en="Rooftop Solar System" data-ta="கூரை சோலார் அமைப்பு">Rooftop Solar System</h3>
+                        <p data-en="Residential and commercial rooftop solar panels with professional installation. We assist with government subsidies, net metering setup, and warranty documentation. Transform your roof into a power plant!"
+                            data-ta="குடியிருப்பு மற்றும் வணிக கூரை சோலார் பேனல் தொழிலாளர் நிறுவலுடன். அரசு மானியத்திற்கு உதவி, நெட் மீட்டரிங் அமைப்பு மற்றும் உத்தரவாத ஆவணங்கள்.">
+                            Residential and commercial rooftop solar panels with professional installation. Transform
+                            your roof into a power plant!</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 data-en="On-Grid / Off-Grid / Hybrid" data-ta="ஆன்-கிரிட் / ஆஃப்-கிரிட் / கலப்பு">On-Grid /
+                            Off-Grid / Hybrid</h3>
+                        <p data-en="Customized solar solutions tailored to your needs — grid-connected for savings, standalone battery systems for rural areas, or hybrid combinations for maximum flexibility and reliability."
+                            data-ta="உங்கள் தேவைக்கு맞춤型 சோலார் தீர்வுகள் — கூட்டு நேர விலைக்கான, தனிமை பேட்டரி அமைப்பு நகர் பகுதிகளுக்கு, அல்லது கலப்பு கலவையுகள்.">
+                            Customized solar solutions tailored to your needs — grid-connected for savings, standalone
+                            battery systems.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-battery-full"></i></div>
+                        <h3 data-en="Battery, Inverter & Panel Sales"
+                            data-ta="பேட்டரி, இன்வர்ட்டர் மற்றும் பேனல் விற்பனை">Battery, Inverter & Panel Sales</h3>
+                        <p data-en="Premium branded solar panels, inverters, and batteries available for direct purchase with full manufacturer warranty. We provide only certified, high-quality components from trusted international brands."
+                            data-ta="பிரிமியம் பிராண்ட் சோலார் பேனல்கள், இன்வர்ட்டர்கள் மற்றும் பேட்டரிகள் நேரடி வாங்குவதற்கு முழு உற்பாதக உத்தரவாதத்துடன்.">
+                            Premium branded solar panels, inverters, and batteries available for direct purchase with
+                            full manufacturer warranty.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-video"></i></div>
+                        <h3 data-en="CCTV & Solar Camera" data-ta="CCTV மற்றும் சோலார் கேமரா">CCTV & Solar Camera</h3>
+                        <p data-en="Solar-powered CCTV camera systems for 24/7 monitoring without electricity bills. Perfect for homes, farms, and shops. Remote viewing via 4G/WiFi with cloud storage backup included."
+                            data-ta="சோலார் சக்தியுடன் கூடிய CCTV கேமரா அமைப்பு 24/7 கண்காணிப்பு மின்சாரக் கட்டணம் இல்லாமல்.">
+                            Solar-powered CCTV camera systems for 24/7 monitoring without electricity bills.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3 data-en="Solar Street Light Setup" data-ta="சோலார் தெருவொளி நிறுவல்">Solar Street Light
+                            Setup</h3>
+                        <p data-en="Complete solar street lighting systems for roads, colonies, and agricultural lands. Energy-efficient LED lights with automatic day/night sensors. Save municipal electricity costs by 100%."
+                            data-ta="சாலைகள், வசதிகள் மற்றும் விவசாய நிலங்களுக்கு முழுமையான சோலார் தெருவொளி அமைப்புகள்.">
+                            Complete solar street lighting systems for roads, colonies, and agricultural lands.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-industry"></i></div>
+                        <h3 data-en="Industrial Solar Solutions" data-ta="தொழிற்சாலை சோலார் தீர்வுகள்">Industrial Solar
+                            Solutions</h3>
+                        <p data-en="Large-scale solar systems for factories, warehouses, and industries. Reduce operating costs dramatically. We handle everything from design to installation to maintenance."
+                            data-ta="தொழிற்சாலைகள், கதவுக்குள் மற்றும் தொழிற்சாலைகளுக்கான பெரிய அளவிலான சோலார் அமைப்புகள்.">
+                            Large-scale solar systems for factories, warehouses, and industries.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h3 data-en="Home / Shop Electrification" data-ta="வீடு / கடை மின்மயமாக்கல்">Home / Shop
+                            Electrification</h3>
+                        <p data-en="Complete solar electrification packages for homes and shops — from planning and design to installation and after-sales service. Full electrical solutions with warranty and AMC support."
+                            data-ta="வீடு மற்றும் கடைகளுக்கான முழுமையான சோலார் மின்மயமாக்கல் பொதிகள் — திட்டமிடல் மற்றும் வடிவமைப்புக்கு நிறுவல் மற்றும் விற்பனைக்குப் பிந்தைய சேவை வரை.">
+                            Complete solar electrification packages for homes and shops.</p>
+                    </div>
+                </div>
+                <div class="services-nav">
+                    <button class="service-nav-btn" id="service-prev"><i class="fas fa-chevron-left"></i></button>
+                    <span id="service-counter"
+                        style="color: var(--text-muted); padding: 0 16px; display: flex; align-items: center;">1 /
+                        8</span>
+                    <button class="service-nav-btn" id="service-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why">
+        <div class="container">
+            <div class="why-grid">
+                <div>
+                    <span class="section-tag fade-up" data-en="Why Choose Us"
+                        data-ta="ஏன் நம்மைத் தேர்ந்தெடுக்க வேண்டும்">Why Choose Us</span>
+                    <h2 class="section-title fade-up" data-en="Why Choose Saisakthi "
+                        data-ta="Saisakthi சோலாரைத் தேர்ந்தெடுக்க ஏன் "><span style="color:var(--yellow);"
+                            data-en="Solar" data-ta="சிறப்புகள்">Solar</span></h2>
+                    <div class="section-divider fade-up"></div>
+                    <div class="why-features fade-up">
+                        <div class="why-feat">
+                            <div class="why-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4 data-en="On-time Service" data-ta="நேரம் தவறாத சேவை">On-time Service</h4>
+                                <p data-en="We respect your time. Teams arrive on schedule and complete work efficiently."
+                                    data-ta="நாம் உங்கள் நேரத்தை மதிக்கிறோம். குழுக்கள் அட்டவணை வந்து திறமையுடன் பணி முடிக்கும்.">
+                                    We respect your time. Teams arrive on schedule and complete work efficiently.</p>
+                            </div>
+                        </div>
+                        <div class="why-feat">
+                            <div class="why-icon"><i class="fas fa-star"></i></div>
+                            <div>
+                                <h4 data-en="Premium Brands Only" data-ta="பிரிமியம் பிராண்டுகள் மாத்திரம்">Premium
+                                    Brands Only</h4>
+                                <p data-en="Certified quality equipment with manufacturer warranties and long-term support."
+                                    data-ta="சான்றிதழ், தர சாதனபத்திர உற்பாதக உத்தரவாதங்கள் மற்றும் நீண்ட கால ஆதரவு.">
+                                    Certified quality equipment with manufacturer warranties and long-term support.</p>
+                            </div>
+                        </div>
+                        <div class="why-feat">
+                            <div class="why-icon"><i class="fas fa-tag"></i></div>
+                            <div>
+                                <h4 data-en="Best Price Guarantee" data-ta="சிறந்த விலை உத்தரவாதம்">Best Price Guarantee
+                                </h4>
+                                <p data-en="Competitive pricing. We match or beat any genuine quote in Tamil Nadu."
+                                    data-ta="போட்டிமுறை விலை. நாம் தமிழ்நாட்டில் எந்த உண்மையான மேலோடையையும் பொருத்த அல்லது வெற்றி கொள்வோம்.">
+                                    Competitive pricing. We match or beat any genuine quote in Tamil Nadu.</p>
+                            </div>
+                        </div>
+                        <div class="why-feat">
+                            <div class="why-icon"><i class="fas fa-headset"></i></div>
+                            <div>
+                                <h4 data-en="24/7 Support" data-ta="24/7 ஆதரவு">24/7 Support</h4>
+                                <p data-en="Any issue, any time — we're always just a call away for our customers."
+                                    data-ta="எந்த பிரச்சனை, எந்த நேரம் — நாம் எப்போதும் எங்கள் வாடிக்கையாளர்களுக்கு அருகில் உள்ளோம்.">
+                                    Any issue, any time — we're always just a call away for our customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products">
+        <div class="container">
+            <div style="text-align:center; max-width:600px; margin:0 auto 48px;">
+                <span class="section-tag fade-up" data-en="Products" data-ta="பொருட்கள்">Products</span>
+                <h2 class="section-title fade-up" data-en="Solar " data-ta="சோலார் "><span data-en="Products We Offer"
+                        data-ta="வழங்கும் பொருட்கள்">Products We Offer</span></h2>
+                <div class="section-divider fade-up"></div>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #1565c0, #0d47a1);"><i
+                            class="fas fa-sun" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Monocrystalline Panels" data-ta="மோனோ கிரிஸ்டல் பேனல்கள்">Monocrystalline Panels
+                        </h4>
+                        <p data-en="High-efficiency solar panels with 20%+ efficiency ideal for limited roof space."
+                            data-ta="அதிக-திறனாய் சோலார் பேனல்கள் 20%+ திறனாய় सीमited கூரை இடத்திற்கு சிறந்த.">
+                            High-efficiency solar panels with 20%+ efficiency.</p>
+                        <span class="product-tag">380W – 550W</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #0d47a1, #1565c0);"><i
+                            class="fas fa-grip-vertical" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Polycrystalline Panels" data-ta="பாலி கிரிஸ்டல் பேனல்கள்">Polycrystalline Panels
+                        </h4>
+                        <p data-en="Cost-effective panels ideal for large installations and farms."
+                            data-ta="கொஞ்ச விலை பேனல்கள் பெரிய நிறுவல் மற்றும் பண்ணைகளுக்கு சிறந்த.">Cost-effective
+                            panels perfect for large installations.</p>
+                        <span class="product-tag">320W – 450W</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #1976d2, #0d47a1);"><i
+                            class="fas fa-battery-full" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Solar Batteries" data-ta="சோலார் பேட்டரிகள்">Solar Batteries</h4>
+                        <p data-en="Deep-cycle lithium and lead-acid batteries for 24/7 energy storage."
+                            data-ta="ஆழ்-சைகிள் லிதியம் மற்றும் lead-அமிலம் பேட்டரிகள் 24/7 ஆற்றல் சேமிப்பாய்.">
+                            Deep-cycle batteries for reliable energy storage 24/7.</p>
+                        <span class="product-tag">5kWh – 100kWh</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #0d47a1, #0a1f44);"><i
+                            class="fas fa-plug" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Solar Inverters" data-ta="சோலார் இன்வர்ட்டர்கள்">Solar Inverters</h4>
+                        <p data-en="Grid-tie, off-grid, and hybrid inverters for all system types."
+                            data-ta="கட்ட-tie, விலக்கு-கட்ட மற்றும் கலப்பு inverters அனைத்து அமைப்பு வகைகளுக்கு.">
+                            Grid-tie, off-grid, and hybrid inverters with warranty.</p>
+                        <span class="product-tag">1kW – 100kW</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #1565c0, #0d47a1);"><i
+                            class="fas fa-droplet" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Solar Water Pumps" data-ta="சோலார் நீர் பம்ப்கள்">Solar Water Pumps</h4>
+                        <p data-en="Submersible and surface pumps powered completely by solar energy."
+                            data-ta="தெள்ளம்-மூழ்கு மற்றும் மேற்பரப்பு பம்ப்கள் முற்றிலும் சோலார் ஆற்றல் மூலம் இயக்கப்படுகின்றன.">
+                            Submersible and surface pumps powered by solar energy.</p>
+                        <span class="product-tag">1.5HP – 20HP</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #0d47a1, #1565c0);"><i
+                            class="fas fa-lightbulb" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Solar Street Lights" data-ta="சோலார் தெருவொளிகள்">Solar Street Lights</h4>
+                        <p data-en="All-in-one integrated solar lights with automatic day/night sensor."
+                            data-ta="எல்லா-in-ஒரு ஒருங்கிணைந்த சோலார் வொளிகள் தானியங்கி பகல்/இரவு sensor உடன்.">
+                            All-in-one solar lights with automatic day/night sensor.</p>
+                        <span class="product-tag">12W – 100W</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #1976d2, #0d47a1);"><i
+                            class="fas fa-camera" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Solar CCTV Cameras" data-ta="சோலார் CCTV கேமரா">Solar CCTV Cameras</h4>
+                        <p data-en="Off-grid solar-powered CCTV for 24/7 remote monitoring."
+                            data-ta="விலக்கு-கட்ட சோலார்-powered CCTV 24/7 தொலை கண்காணிப்பு.">Off-grid solar CCTV for
+                            24/7 monitoring.</p>
+                        <span class="product-tag">4G / WiFi</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #0d47a1, #1976d2);"><i
+                            class="fas fa-microchip" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Charge Controllers" data-ta="கட்ட நियந்திரணாய়கள்">Charge Controllers</h4>
+                        <p data-en="MPPT and PWM controllers to optimize panel efficiency."
+                            data-ta="MPPT மற்றும் PWM நியந்திரணாய்கள் பேனல் திறனாய் மாற்றியமைக்க.">MPPT and PWM
+                            controllers for optimal efficiency.</p>
+                        <span class="product-tag">20A – 120A</span>
+                    </div>
+                </div>
+                <div class="product-card fade-up">
+                    <div class="product-img" style="background: linear-gradient(135deg, #1565c0, #1976d2);"><i
+                            class="fas fa-cable" style="font-size: 52px; color: #ffc107;"></i></div>
+                    <div class="product-info">
+                        <h4 data-en="Mounting & Wiring" data-ta="ஏற்றம் மற்றும் மின் வடிவம்">Mounting & Wiring</h4>
+                        <p data-en="Complete mounting systems, cables, and accessories for installations."
+                            data-ta="முழுமையான ஏற்றம் அமைப்புகள், கேபல்கள் மற்றும் புணைஒர்க்ளாய்கள் நிறுவல்களுக்கு.">
+                            Complete mounting systems and accessories for installations.</p>
+                        <span class="product-tag" data-en="All Types" data-ta="அனைத்து வகைகள்">All Types</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+        <div class="container">
+            <div style="text-align:center; max-width:600px; margin:0 auto;">
+                <span class="section-tag fade-up" data-en="How It Works" data-ta="இது எப்படி வேலை செய்கிறது">How It
+                    Works</span>
+                <h2 class="section-title fade-up" data-en="Our Simple " data-ta="எங்கள் எளிய "><span
+                        data-en="4-Step Process" data-ta="4-படி செயல்முறை">4-Step Process</span></h2>
+                <div class="section-divider fade-up"></div>
+            </div>
+            <div class="process-steps fade-up">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4 data-en="Free Consultation" data-ta="இலவச ஆலோசனை">Free Consultation</h4>
+                    <p data-en="Call or WhatsApp us. We assess your power needs and recommend the system."
+                        data-ta="எங்களுக்கு அழைக்கவோ அல்லது WhatsApp செய்யவோ. நாம் உங்கள் ஆற்றல் தேவையை மூல்யாங்கிப்போம்.">
+                        Call or WhatsApp us. We assess your needs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-en="Site Survey" data-ta="இடம் கணக்கெடுப்பு">Site Survey</h4>
+                    <p data-en="Our engineer visits to measure roof space, load, and grid details."
+                        data-ta="எங்கள் பொறியாளர் உங்கள் இடத்தை பார்வை செய்து அளவீடு செய்வார்.">Our engineer measures
+                        your property.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-en="Installation" data-ta="நிறுவல்">Installation</h4>
+                    <p data-en="Professional installation with quality equipment. Completed on time."
+                        data-ta="தர சாதனபத்திர சாதனங்களுடன் பேசாதார நிறுவல். সময়ில் முடிந்துவிடும்.">Professional
+                        installation completed on schedule.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-en="After-Sales Support" data-ta="விற்பனைக்குப் பிந்தைய ஆதரவு">After-Sales Support</h4>
+                    <p data-en="AMC, service, and 24/7 customer support for life."
+                        data-ta="AMC, சேவை மற்றும் 24/7 வாடிக்கை ஆதரவு வாழ்க்கைக்கு.">AMC, service, and 24/7 support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="container">
+            <div style="text-align:center; max-width:600px; margin:0 auto;">
+                <span class="section-tag fade-up" data-en="Testimonials" data-ta="கருத்துக்கள்">Testimonials</span>
+                <h2 class="section-title fade-up" data-en="What Our Customers " data-ta="எங்கள் வாடிக்கையாளர்கள் "><span
+                        style="color:var(--yellow);" data-en="Say" data-ta="சொல்கிறார்கள்">Say</span></h2>
+                <div class="section-divider fade-up"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="Great service! Our home solar system works perfectly. Electricity bill reduced by 90%. Highly satisfied!"
+                        data-ta="சிறப்பான சேவை! எங்கள் வீட்டு சோலார் அமைப்பு சிறப்பாக வேலை செய்கிறது. மின்சாரக் கட்டணம் 90% குறைந்தது. மிகவும் மகிழ்ச்சி!">
+                        Great service! Our home solar system works perfectly. Electricity bill reduced by 90%. Highly
+                        satisfied!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ர</div>
+                        <div class="author-info">
+                            <span data-en="Rajesh Kumar" data-ta="ராஜேஷ் குமார்">Rajesh Kumar</span>
+                            <span data-en="Karur – Home Owner" data-ta="கரூர் – வீட்டு உரிமையாளர்">Karur – Home
+                                Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="Our farm borewell solar pump works flawlessly. No more electricity bills. Excellent service!"
+                        data-ta="எங்கள் பண்ணை குழாய்க் கிணறு சோலார் பம்ப் சிறப்பாக வேலை செய்கிறது. மின்சாரக் கட்டணம் இல்லை. சிறப்பான சேவை!">
+                        Our farm borewell solar pump works flawlessly. No more electricity bills. Excellent service!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <span data-en="Murugan S." data-ta="முருகன் எஸ்.">Murugan S.</span>
+                            <span data-en="Namakkal – Farmer" data-ta="நாமக்கல் – விவசாயி">Namakkal – Farmer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p data-en="Installed solar system in my shop 8 months ago. Perfect! No issues. Excellent service!"
+                        data-ta="எங்கள் கடைக்கு solar system போட்டு 8 மாதம் ஆகிறது. ஒரு பிரச்சனையும் இல்லை. சேவை மிகவும் சிறப்பாக உள்ளது.">
+                        Installed solar system in my shop 8 months ago. Perfect! No issues. Excellent service!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ப</div>
+                        <div class="author-info">
+                            <span data-en="Pandian Arasu" data-ta="பாண்டி அரசு">Pandian Arasu</span>
+                            <span data-en="Trichy – Shop Owner" data-ta="திருச்சிராப்பள்ளி – கடை உரிமையாளர்">Trichy –
+                                Shop Owner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div style="text-align:center; max-width:600px; margin:0 auto;">
+                <span class="section-tag fade-up" data-en="Contact Us" data-ta="எங்களைத் தொடர்பு கொள்ளுங்கள்">Contact
+                    Us</span>
+                <h2 class="section-title fade-up" data-en="Get in " data-ta="என்தொடர்பு "><span data-en="Touch"
+                        data-ta="கொள்ளுங்கள்">Touch</span></h2>
+                <div class="section-divider fade-up"></div>
+                <p class="section-lead fade-up"
+                    data-en="Get a free consultation and quotation today. We'll respond within 24 hours."
+                    data-ta="இலவச ஆலோசனை மற்றும் மேலோடு பெறுங்கள். நாம் 24 மணிநேரத்துக்குள் பதிலளிப்போம்.">Get a free
+                    consultation and quotation today. We'll respond within 24 hours.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <h3 data-en="Get in Touch" data-ta="என்தொடர்பு கொள்ளுங்கள்">Get in Touch</h3>
+                    <p data-en="Have questions about solar? Contact us directly. Get free consultation!"
+                        data-ta="சோலார் பற்றி கேள்விகள் உள்ளதா? நேரடியாக தொடர்பு கொள்ளுங்கள்.">Have questions about
+                        solar? Contact us directly!</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h5 data-en="Location" data-ta="இடம்">Location</h5>
+                                <p data-en="Karur, Tamil Nadu, India" data-ta="கரூர், தமிழ்நாடு, இந்தியா">Karur, Tamil
+                                    Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h5 data-en="Call / WhatsApp" data-ta="அழைக்கவோ / WhatsApp">Call / WhatsApp</h5>
+                                <p><a href="tel:+919443812345" style="color:var(--dark);text-decoration:none;">+91 94438
+                                        12345</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fab fa-youtube"></i></div>
+                            <div>
+                                <h5 data-en="YouTube" data-ta="YouTube">YouTube</h5>
+                                <p><a href="https://www.youtube.com/@SAISAKTHISOLARSOLUTION" target="_blank"
+                                        style="color:var(--blue-light);text-decoration:none;">@SAISAKTHISOLARSOLUTION</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h5 data-en="Working Hours" data-ta="பணி நேரம்">Working Hours</h5>
+                                <p data-en="Mon – Sat: 8:00 AM – 7:00 PM" data-ta="திங்கள் – சனி: 8:00 AM – 7:00 PM">Mon
+                                    – Sat: 8:00 AM – 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-up">
+                    <h3 data-en="Request a Free Quote" data-ta="இலவச மேலோ கேட்டுக்கொள்ளுங்கள்">Request a Free Quote</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-en="Your Name *" data-ta="உங்கள் பெயர் *">Your Name *</label>
+                            <input type="text" id="f-name" data-placeholder-en="Your Name"
+                                data-placeholder-ta="உங்கள் பெயர்" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Phone Number *" data-ta="தொலைபேசி எண் *">Phone Number *</label>
+                            <input type="tel" id="f-phone" data-placeholder-en="+91 xxxxx xxxxx"
+                                data-placeholder-ta="+91 xxxxx xxxxx" placeholder="+91 xxxxx xxxxx" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Service Required" data-ta="தேவையான சேவை">Service Required</label>
+                        <select id="f-service">
+                            <option value="">Select a service...</option>
+                            <option>Rooftop Solar Power System</option>
+                            <option>Solar Water Pump (Borewell)</option>
+                            <option>Off-Grid / On-Grid / Hybrid System</option>
+                            <option>Solar Battery / Inverter / Panel</option>
+                            <option>CCTV & Solar Camera</option>
+                            <option>Solar Street Light</option>
+                            <option>Industrial Solar Solution</option>
+                            <option>Home / Shop Electrification</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Location / District" data-ta="இடம் / மாவட்டம்">Location / District</label>
+                        <input type="text" id="f-location" data-placeholder-en="Your City / District"
+                            data-placeholder-ta="உங்கள் ஊர் / மாவட்டம்" placeholder="Your City / District" />
+                    </div>
+                    <div class="form-group">
+                        <label data-en="Message" data-ta="செய்தி">Message</label>
+                        <textarea id="f-message" data-placeholder-en="Describe your requirements..."
+                            data-placeholder-ta="உங்கள் தேவைகளை விவரிக்கவும்..."
+                            placeholder="Describe your requirements..."></textarea>
+                    </div>
+                    <button class="btn-submit" id="submit-btn" onclick="submitForm()">
+                        <i class="fas fa-paper-plane" style="margin-right:8px;"></i><span data-en="Send Enquiry"
+                            data-ta="விசாரணை அனுப்புங்கள்">Send Enquiry</span>
+                    </button>
+                    <div class="alert-success" id="form-success"
+                        data-en="✅ Thank you! We'll contact you within 24 hours."
+                        data-ta="✅ நன்றி! நாம் 24 மணிநேரத்துக்குள் தொடர்பு கொள்ளுவோம்.">✅ Thank you! We'll contact you
+                        within 24 hours.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-sun">☀️</div>
+                    <p data-en="Saisakthi Solar Solution — Solar Sales, Service & Installation for homes, shops, farms, and factories. Tamil Nadu's trusted solar partner."
+                        data-ta="Saisakthi Solar Solution — வீடு, கடை, பண்ணை மற்றும் தொழிற்சாலைகளுக்கான சோலார் விற்பனை, சேவை மற்றும் நிறுவல். தமிழ்நாட்டின் நம்பகமான சோலார் பணி.">
+                        Saisakthi Solar Solution — Solar Sales, Service & Installation for homes, shops, farms, and
+                        factories. Tamil Nadu's trusted solar partner.</p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@SAISAKTHISOLARSOLUTION" target="_blank"
+                            aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Services" data-ta="சேவைகள்">Services</h5>
+                    <ul>
+                        <li><a href="#services">Solar Water Pump</a></li>
+                        <li><a href="#services">Rooftop Solar</a></li>
+                        <li><a href="#services">On/Off-Grid Systems</a></li>
+                        <li><a href="#services">Solar Street Light</a></li>
+                        <li><a href="#services">CCTV Solar Camera</a></li>
+                        <li><a href="#services">Industrial Solar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Quick Links" data-ta="விரைவு இணைப்புகள்">Quick Links</h5>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#process">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5 data-en="Contact" data-ta="தொடர்பு">Contact</h5>
+                    <p data-en="Karur, Tamil Nadu, India" data-ta="கரூர், தமிழ்நாடு, இந்தியா">Karur, Tamil Nadu, India
+                    </p>
+                    <p style="margin-top:10px;"><i class="fas fa-phone-alt"
+                            style="color:var(--yellow);margin-right:8px;"></i><a href="tel:+919443812345"
+                            style="color:rgba(255,255,255,0.6);text-decoration:none;">+91 94438 12345</a></p>
+                    <p style="margin-top:8px;"><i class="fab fa-whatsapp"
+                            style="color:var(--yellow);margin-right:8px;"></i><span data-en="WhatsApp Available"
+                            data-ta="WhatsApp பயன்படுத்தலாம்">WhatsApp Available</span></p>
+                    <p style="margin-top:8px; font-size:12px; color:rgba(255,255,255,0.4);"
+                        data-en="Mon–Sat: 8:00 AM – 7:00 PM" data-ta="திங்கள்–சனி: 8:00 AM – 7:00 PM">Mon–Sat: 8:00 AM –
+                        7:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-en="© 2025 Saisakthi Solar Solution. All Rights Reserved. | Karur, Tamil Nadu"
+                    data-ta="© 2025 Saisakthi Solar Solution. அனைத்து உரிமைகளும் সংரक்ષிக்கப்பட்டுள்ளன. | கரூர், தமிழ்நாடு">
+                    © 2025 <span>Saisakthi Solar Solution</span>. All Rights Reserved. | Karur, Tamil Nadu</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/919443812345" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-top" id="back-top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        // ========================= TRANSLATIONS =========================
+        let currentLang = 'en';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-ta').classList.toggle('active', lang === 'ta');
+
+            document.querySelectorAll('[data-en][data-ta]').forEach(el => {
+                el.textContent = lang === 'en' ? el.dataset.en : el.dataset.ta;
+            });
+
+            document.querySelectorAll('[data-placeholder-en][data-placeholder-ta]').forEach(el => {
+                el.placeholder = lang === 'en' ? el.dataset.placeholderEn : el.dataset.placeholderTa;
+            });
+        }
+
+        switchLanguage('en');
+
+        // ========================= CLICK SPARK =========================
+        function initClickSpark() {
+            const canvas = document.getElementById('spark-canvas');
+            const ctx = canvas.getContext('2d');
+            const sparks = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            document.addEventListener('click', (e) => {
+                const count = 8;
+                for (let i = 0; i < count; i++) {
+                    sparks.push({
+                        x: e.clientX, y: e.clientY, angle: (2 * Math.PI * i) / count,
+                        life: 400, maxLife: 400, size: 8, radius: 15
+                    });
+                }
+            });
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = sparks.length - 1; i >= 0; i--) {
+                    const s = sparks[i];
+                    const progress = s.life / s.maxLife;
+                    const dist = (1 - progress) * s.radius;
+                    const lineLen = s.size * progress;
+                    const x1 = s.x + dist * Math.cos(s.angle);
+                    const y1 = s.y + dist * Math.sin(s.angle);
+                    const x2 = s.x + (dist + lineLen) * Math.cos(s.angle);
+                    const y2 = s.y + (dist + lineLen) * Math.sin(s.angle);
+                    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2;
+                    ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+                    s.life--;
+                    if (s.life <= 0) sparks.splice(i, 1);
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+        initClickSpark();
+
+        // ========================= NAVBAR =========================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+            document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+        });
+
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('nav-links').classList.toggle('open');
+        });
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
+        });
+
+        // ========================= CAROUSEL =========================
+        const track = document.getElementById('carousel-track');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let current = 0, total = 3, timer;
+
+        function goTo(n) {
+            current = (n + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+        function startTimer() { timer = setInterval(() => goTo(current + 1), 5000); }
+        function resetTimer() { clearInterval(timer); startTimer(); }
+
+        document.getElementById('prev-btn').addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+        document.getElementById('next-btn').addEventListener('click', () => { goTo(current + 1); resetTimer(); });
+        dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.idx); resetTimer(); }));
+        startTimer();
+
+        // ========================= SERVICE CAROUSEL =========================
+        let serviceIdx = 0;
+        const serviceCards = document.querySelectorAll('.service-card');
+        const totalServices = serviceCards.length;
+
+        function updateServiceDisplay() {
+            serviceCards.forEach((card, i) => {
+                card.classList.remove('active', 'prev', 'next');
+                if (i === serviceIdx) card.classList.add('active');
+                else if (i < serviceIdx) card.classList.add('prev');
+                else card.classList.add('next');
+            });
+            document.getElementById('service-counter').textContent = `${serviceIdx + 1} / ${totalServices}`;
+        }
+
+        document.getElementById('service-prev').addEventListener('click', () => {
+            serviceIdx = (serviceIdx - 1 + totalServices) % totalServices;
+            updateServiceDisplay();
+        });
+
+        document.getElementById('service-next').addEventListener('click', () => {
+            serviceIdx = (serviceIdx + 1) % totalServices;
+            updateServiceDisplay();
+        });
+
+        updateServiceDisplay();
+
+        // ========================= FADE UP =========================
+        const fadeObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
+
+        // ========================= FORM =========================
+        function submitForm() {
+            const n = document.getElementById('f-name').value.trim();
+            const p = document.getElementById('f-phone').value.trim();
+            if (!n || !p) { alert('Please enter your name and phone number.'); return; }
+            document.getElementById('form-success').style.display = 'block';
+            document.getElementById('submit-btn').textContent = '✓ Sent!';
+            document.getElementById('submit-btn').style.background = '#2e7d32';
+        }
+    </script>
+</body>
+
+</html>
