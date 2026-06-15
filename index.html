@@ -581,17 +581,16 @@
 
         .expand-img-card {
             position: relative;
-            width: 40px;
+            flex: 0 0 40px;
             height: 384px;
             overflow: hidden;
             border-radius: 24px;
             cursor: pointer;
-            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
+            transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .expand-img-card:hover {
-            width: 384px;
+        .expand-img-card.active, .expand-img-card:hover {
+            flex: 1 1 0;
         }
 
         .expand-img {
@@ -610,6 +609,7 @@
             pointer-events: none;
         }
 
+        .expand-img-card.active .expand-overlay,
         .expand-img-card:hover .expand-overlay {
             opacity: 1;
         }
@@ -627,6 +627,7 @@
             pointer-events: none;
         }
 
+        .expand-img-card.active .expand-text,
         .expand-img-card:hover .expand-text {
             opacity: 1;
         }
@@ -643,10 +644,6 @@
 
             .expand-img-card {
                 height: 300px;
-            }
-
-            .expand-img-card:hover {
-                width: 300px;
             }
         }
 
@@ -2195,6 +2192,19 @@
         }
 
         switchLanguage('en');
+
+        // ========================= HOVER EXPAND GALLERY =========================
+        const expandCards = document.querySelectorAll('.expand-img-card');
+        expandCards.forEach(card => {
+            card.addEventListener('click', () => {
+                expandCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+        
+        if (expandCards.length > 0) {
+            expandCards[0].classList.add('active');
+        }
 
         // ========================= CLICK SPARK =========================
         function initClickSpark() {
